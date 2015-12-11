@@ -1,0 +1,17 @@
+{
+  "name": "loveme",
+  "version": "0.6.9",
+  "description": "node extension to generate some nice things for Allie",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Pizzimenti",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "loveme": "index.js"
+  },
+  "dependencies": {
+    "request": "^2.67.0"
+  }
+}
