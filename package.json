@@ -15,7 +15,6 @@
     "cli-color": "^1.1.0"
   },
   "devDependencies": {
-    "cli-color": "^1.1.0",
-      "compliments.json": "./compliments.json"
+    "cli-color": "^1.1.0"
   }
 }

@@ -12,6 +12,8 @@ var date = new Date(),
     rel = path.dirname(require.main.filename),
     json = JSON.parse(fs.readFileSync(rel + '/compliments.json', 'utf8'));
 
+require('./compliments.json');
+
 if (json.times === 0) {
     console.log('All you gotta do is type ' + col('loveme') + ' and a nice lil message will come up :3');
     json.times++;
