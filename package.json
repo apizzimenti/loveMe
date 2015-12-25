@@ -1,6 +1,6 @@
 {
   "name": "loveme",
-  "version": "0.6.9",
+  "version": "0.7.2",
   "description": "node extension to generate some nice things for Allie",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,10 @@
     "loveme": "index.js"
   },
   "dependencies": {
-    "request": "^2.67.0"
+    "cli-color": "^1.1.0"
+  },
+  "devDependencies": {
+    "cli-color": "^1.1.0",
+      "compliments.json": "./compliments.json"
   }
 }

@@ -12,14 +12,20 @@ var date = new Date(),
     rel = path.dirname(require.main.filename),
     json = JSON.parse(fs.readFileSync(rel + '/compliments.json', 'utf8'));
 
+if (json.times === 0) {
+    console.log('All you gotta do is type ' + col('loveme') + ' and a nice lil message will come up :3');
+    json.times++;
+    fs.writeFileSync(rel + '/compliments.json', JSON.stringify(json, null, 2));
+}
+
 if (date.getMonth() === 0 && date.getDay() === 29) {
     console.log(col(json.seasonal[4]));
     process.exit();
 } else if (date.getMonth() === 6 && date.getDay() === 12) {
     console.log(col(json.seasonal[1]));
     process.exit();
-} else if (date.getMonth() === 11 && date.getDay() === 24) {
-    console.log(col(json.seasonal[0]));
+} else if (date.getMonth() === 11 && date.getDay() === 25) {
+    console.log(col(json.seasonal[Math.floor(Math.random() * 3)]));
     process.exit();
 } else if (date.getMonth() === 4 && date.getDay() === 25) {
     console.log(col(json.seasonal[2]));
@@ -33,4 +39,9 @@ if (date.getMonth() === 0 && date.getDay() === 29) {
     } else {
         console.log(col(json.compliments[Math.floor(Math.random() * json.compliments.length)]));
     }
+}
+
+if (process.argv[2] === 'reset') {
+    json.times = 0;
+    fs.writeFileSync(rel + '/compliments.json', JSON.stringify(json, null, 2));
 }
